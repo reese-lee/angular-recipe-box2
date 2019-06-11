@@ -2,18 +2,23 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
 
-    <div style="text-align:center">
-      <h1>Recipe Box for your recipes, a storage. {{month}}/{{day}}/{{year}}</h1>
-      <h3>{{Recipes}}</h3>
-    </div>
-    <ul>
-      <li [class]="ratingColor(currentRecipe)" *ngFor="let currentRecipe of tasks">{{currentRecipe.title}}<br>{{currentRecipe.ingredients}}<br>{{currentRecipe.directions}} <button (click)="editTask()">Edit!</button></li>
-    </ul>
-  </body>
+  <div style="text-align:center">
+    <h1>Welcome, {{userName}}!</h1>
+    <form>
+      <input [(ngModel)]="userName" type="text" name="user">
+    </form>
+
+    <h1>Recipe Box for your recipes, a storage. {{month}}/{{day}}/{{year}}</h1>
+    <h3>{{Recipes}}</h3>
+  </div>
+  <ul>
+    <li [class]="ratingColor(currentRecipe)" *ngFor="let currentRecipe of tasks">{{currentRecipe.title}}<br>{{currentRecipe.ingredients}}<br>{{currentRecipe.directions}} <button (click)="editTask()">Edit!</button></li>
+  </ul>
+</body>
 </html>
