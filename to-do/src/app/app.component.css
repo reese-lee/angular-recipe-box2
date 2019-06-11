@@ -1,0 +1,17 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: orange;
+}
+
+h3 {
+  color: green;
+}
+
+li {
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid orange;
+}

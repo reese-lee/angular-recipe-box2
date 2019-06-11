@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div style="text-align:center">
+      <h1>Recipe Box for your recipes, a storage. {{month}}/{{day}}/{{year}}</h1>
+      <h3>{{Recipes}}</h3>
+    </div>
+    <ul>
+      <li *ngFor="let currentRecipe of tasks">{{currentRecipe.title}}<br>{{currentRecipe.ingredients}}<br>{{currentRecipe.directions}}</li>
+    </ul>
+  </body>
+</html>
