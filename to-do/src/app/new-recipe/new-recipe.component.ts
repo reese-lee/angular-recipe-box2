@@ -8,9 +8,10 @@ import { Recipe } from '../models/recipe.model';
 })
 export class NewRecipeComponent {
 
-  constructor() { }
+  @Output() sendRecipe = new EventEmitter();
 
-  ngOnInit() {
+  submitForm(title: string, ingredients: string, directions: string, rating: string) {
+    let newRecipe: Recipe = new Recipe(title, ingredients, directions, parseInt(rating));
+    this.sendRecipe.emit(newRecipe);
   }
-
 }

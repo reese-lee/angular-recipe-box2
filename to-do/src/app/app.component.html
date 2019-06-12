@@ -17,7 +17,7 @@
     <h1>Recipe Box for your recipes, a storage. {{month}}/{{day}}/{{year}}</h1>
     <app-recipe-list [childRecipeList]="masterRecipeList" (clickSender)="editRecipe($event)"></app-recipe-list>
     <app-edit-recipe [childSelectedRecipe]="selectedRecipe" (clickedDone)="finishedEditing()"></app-edit-recipe>
-    <app-new-recipe></app-new-recipe>
+    <app-new-recipe (sendRecipe)="addRecipe($event)">></app-new-recipe>
   </div>
 
 

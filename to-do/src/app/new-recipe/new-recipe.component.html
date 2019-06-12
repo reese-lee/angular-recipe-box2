@@ -12,5 +12,5 @@
     <option [value]="2"> Medium Rating </option>
     <option [value]="3"> High Rating </option>
   </select>
-  <button (click)="submitForm(newTitle.value, newIngredients.value, newDirections.value, newRating.value)">Add</button>
+  <button (click)="submitForm(newTitle.value, newIngredients.value, newDirections.value, newRating.value); newTitle.value=''; newIngredients.value=''; newDirections.value='';">Add</button>
 </div>
