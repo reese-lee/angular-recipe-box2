@@ -1,4 +1,3 @@
-
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../models/recipe.model';
 
@@ -14,13 +13,9 @@ export class RecipeListComponent {
   @Output() clickSender = new EventEmitter();
 
   editButtonClicked(recipeToEdit: Recipe) {
-    console.log("edit button click")
     recipeToEdit.currentlyEditing = true;
-
     this.clickSender.emit(recipeToEdit);
   }
-
-  // childSelectedRecipe: Recipe;
 
   ratingColor(currentRecipe){
     if (currentRecipe.rating === 3){
@@ -30,5 +25,15 @@ export class RecipeListComponent {
     } else {
       return "bg-info";
     }
+  }
+
+  filterByCompleteness: string = "incompleteRecipes";
+
+  onChange(optionFromMenu) {
+    this.filterByCompleteness = optionFromMenu;
+  }
+
+  toggleDone(clickedRecipe: Recipe, setCompleteness: boolean) {
+    clickedRecipe.haveTried = setCompleteness;
   }
 }

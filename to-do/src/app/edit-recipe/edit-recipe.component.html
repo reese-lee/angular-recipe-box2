@@ -1,8 +1,6 @@
-<p>
-  edit-recipe works!
-</p>
 <div *ngIf="childSelectedRecipe">
   <h3>{{childSelectedRecipe.title}}</h3>
+  <p>Recipe Complete? {{childSelectedRecipe.haveTried}}</p>
   <h3>Edit Recipe</h3>
   <label>Enter Title:</label>
   <input [(ngModel)]="childSelectedRecipe.title">

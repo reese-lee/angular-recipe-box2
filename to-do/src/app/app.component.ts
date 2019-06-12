@@ -22,8 +22,6 @@ export class AppComponent {
   ];
 
   editRecipe(recipeToEdit) {
-    console.log("editing");
-    console.log(recipeToEdit);
     this.selectedRecipe = recipeToEdit;
   }
 

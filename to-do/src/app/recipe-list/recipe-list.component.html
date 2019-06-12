@@ -1,4 +1,20 @@
+<select (change)="onChange($event.target.value)">
+  <option value="allRecipes">All Recipes</option>
+  <option value="completedRecipes">Completed Recipes</option>
+  <option value="incompleteRecipes" selected="selected">Incomplete Recipes</option>
+</select>
+
+<!-- <ul>
+  <li [class]="priorityColor(currentTask)" *ngFor="let currentTask of childTaskList | completeness">{{currentTask.description}} {{currentTask.priority}}
+    <input *ngIf="currentTask.done === true" type="checkbox" checked (click)="toggleDone(currentTask, false)"/>
+    <input *ngIf="currentTask.done === false" type="checkbox" (click)="toggleDone(currentTask, true)"/>
+    <button (click)="editButtonClicked(currentTask)">Edit!</button>
+  </li>
+</ul> -->
+
 <ul>
-  <li [class]="ratingColor(currentRecipe)" *ngFor="let currentRecipe of childRecipeList">{{currentRecipe.title}}<br>{{currentRecipe.ingredients}}<br>{{currentRecipe.directions}}
+  <li [class]="ratingColor(currentRecipe)" *ngFor="let currentRecipe of childRecipeList | completeness:filterByCompleteness">{{currentRecipe.title}}<br>{{currentRecipe.ingredients}}<br>{{currentRecipe.directions}}
+    <input *ngIf="currentRecipe.haveTried === true" type="checkbox" checked (click)="toggleDone(currentRecipe, false)"/>
+    <input *ngIf="currentRecipe.haveTried === false" type="checkbox" (click)="toggleDone(currentRecipe, true)"/>
   <button (click)="editButtonClicked(currentRecipe)">Edit!</button></li>
 </ul>
