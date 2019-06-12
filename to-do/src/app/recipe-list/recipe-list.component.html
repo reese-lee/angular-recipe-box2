@@ -1,7 +1,3 @@
-<p>
-  recipe-list works!
-</p>
-
 <ul>
-  <li [class]="ratingColor(currentRecipe)" *ngFor="let currentRecipe of childRecipeList">{{currentRecipe.title}}<br>{{currentRecipe.ingredients}}<br>{{currentRecipe.directions}} <button (click)="editRecipe(currentRecipe)">Edit!</button></li>
+  <li [class]="ratingColor(currentRecipe)" *ngFor="let currentRecipe of childRecipeList">{{currentRecipe.title}}<br>{{currentRecipe.ingredients}}<br>{{currentRecipe.directions}} <button (click)="editButtonClicked(currentRecipe)">Edit!</button></li>
 </ul>

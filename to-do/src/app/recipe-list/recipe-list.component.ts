@@ -1,14 +1,22 @@
-import { Component, Input } from '@angular/core';
-import { Recipe } from './../models/Recipe.model';
+
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Recipe } from '../models/recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css']
 })
+
 export class RecipeListComponent {
 
   @Input() childRecipeList: Recipe[];
+  @Output() clickSender = new EventEmitter();
+
+  editButtonClicked(recipeToEdit: Recipe) {
+    console.log("edit button click")
+    this.clickSender.emit(recipeToEdit);
+  }
 
   ratingColor(currentRecipe){
     if (currentRecipe.rating === 3){
@@ -19,13 +27,4 @@ export class RecipeListComponent {
       return "bg-info";
     }
   }
-
-
-
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
