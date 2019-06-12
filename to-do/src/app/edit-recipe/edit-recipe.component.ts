@@ -11,8 +11,7 @@ export class EditRecipeComponent {
   @Input() childSelectedRecipe: Recipe;
   @Output() clickedDone = new EventEmitter();
 
-  finishedEditing(recipeToEdit) {
-    recipeToEdit.currentlyEditing = false;
+  finishedEditing() {
     this.clickedDone.emit();
   }
 
