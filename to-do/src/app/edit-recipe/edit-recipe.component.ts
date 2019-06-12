@@ -11,13 +11,9 @@ export class EditRecipeComponent {
   @Input() childSelectedRecipe: Recipe;
   @Output() clickedDone = new EventEmitter();
 
-  finishedEditing() {
+  finishedEditing(recipeToEdit) {
+    recipeToEdit.currentlyEditing = false;
     this.clickedDone.emit();
-  }
-
-  constructor() { }
-
-  ngOnInit() {
   }
 
 }

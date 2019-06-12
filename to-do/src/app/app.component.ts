@@ -20,15 +20,19 @@ export class AppComponent {
     new Recipe("Mac & Cheese", "INGREDIENTS 8 ounces whole-grain macaroni elbows 1 head of broccoli, florets cut into small bites (about 1 ½ to 2 cups), optional* 1 ½ tablespoons avocado oil or extra-virgin olive oil 1 small yellow onion, chopped (about 1 ½ cups) 1 cup peeled and grated russet potato (4 ounces, about 1 small or ½ medium potato), preferably organic 3 cloves garlic, pressed or minced ½ teaspoon garlic powder ½ teaspoon onion powder ½ teaspoon dry mustard powder ½ teaspoon fine sea salt, more to taste Small pinch of Frontier Co-op red pepper flakes ⅔ cup raw cashews** 1 cup water, more as necessary ¼ cup Frontier Co-op nutritional yeast  2 to 3 teaspoons apple cider vinegar or distilled white vinegar, to taste", "Cook noodle. Eat noodles", 1)
   ];
 
-  selectedRecipe: Recipe = null;
+  childSelectedRecipe: Recipe;
+  // selectedRecipe: Recipe = null;
 
+  // let currentlyEditing =
   editRecipe(recipeToEdit) {
-    this.selectedRecipe = recipeToEdit;
+    console.log("editing");
+    console.log(recipeToEdit);
+    this.childSelectedRecipe = recipeToEdit;
   }
 
-  finishedEditing() {
-    this.selectedRecipe = null;
-  }
+  // finishedEditing() {
+  //   this.selectedRecipe = null;
+  // }
 
   addRecipe(newRecipe: Recipe) {
   this.masterRecipeList.push(newRecipe);

@@ -15,8 +15,12 @@ export class RecipeListComponent {
 
   editButtonClicked(recipeToEdit: Recipe) {
     console.log("edit button click")
+    recipeToEdit.currentlyEditing = true;
+
     this.clickSender.emit(recipeToEdit);
   }
+
+  // childSelectedRecipe: Recipe;
 
   ratingColor(currentRecipe){
     if (currentRecipe.rating === 3){
