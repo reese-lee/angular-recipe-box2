@@ -15,11 +15,9 @@
     </form>
 
     <h1>Recipe Box for your recipes, a storage. {{month}}/{{day}}/{{year}}</h1>
-    <!-- <h3>{{Recipes}}</h3> -->
+    <app-recipe-list [childRecipeList]="masterRecipeList"></app-recipe-list>
   </div>
-  <ul>
-    <li [class]="ratingColor(currentRecipe)" *ngFor="let currentRecipe of Recipes">{{currentRecipe.title}}<br>{{currentRecipe.ingredients}}<br>{{currentRecipe.directions}} <button (click)="editRecipe(currentRecipe)">Edit!</button></li>
-  </ul>
+
 <div *ngIf="selectedRecipe">
   <h3>{{selectedRecipe.title}}</h3>
 <p>Recipe Complete? {{selectedRecipe.done}}</p>
