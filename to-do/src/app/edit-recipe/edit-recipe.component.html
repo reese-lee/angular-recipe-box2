@@ -1,23 +1,22 @@
 <p>
   edit-recipe works!
 </p>
-<div >
+<div *ngIf="childSelectedRecipe">
   <h3>{{childSelectedRecipe.title}}</h3>
-  <p>Recipe Complete? {{childSelectedRecipe.done}}</p>
   <h3>Edit Recipe</h3>
   <label>Enter Title:</label>
-  <input [(ngModel)]="recipeToEdit.title">
+  <input [(ngModel)]="childSelectedRecipe.title">
   <br>
   <label>Enter Ingredients:</label>
-  <input [(ngModel)]="recipeToEdit.ingredients">
+  <input [(ngModel)]="childSelectedRecipe.ingredients">
   <br>
   <label>Enter Directions:</label>
-  <input [(ngModel)]="recipeToEdit.directions">
+  <input [(ngModel)]="childSelectedRecipe.directions">
   <br>
   <label>Enter Recipe Rating (1-3):</label>
   <br>
-  <input type="radio" [(ngModel)]="recipeToEdit.rating" value="1">1 (Low Rating)<br>
-  <input type="radio" [(ngModel)]="recipeToEdit.rating" value="2">2 (Medium Rating)<br>
-  <input type="radio" [(ngModel)]="recipeToEdit.rating" value="3">3 (High Rating)
+  <input type="radio" [(ngModel)]="childSelectedRecipe.rating" value="1">1 (Low Rating)<br>
+  <input type="radio" [(ngModel)]="childSelectedRecipe.rating" value="2">2 (Medium Rating)<br>
+  <input type="radio" [(ngModel)]="childSelectedRecipe.rating" value="3">3 (High Rating)
   <button (click)="finishedEditing()">Done</button>
 </div>
